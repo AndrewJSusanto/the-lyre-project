@@ -1,0 +1,31 @@
+Order of Operations:
+    Nav Bar:
+        - Add forked pages or scroll manip on href click
+    Pages:
+        - Sequence of page cards structured as pictured in mock up
+    Navigation QOL:
+        - vertical dots scrol indicator on right side
+        - sticky scroll for page nav
+    Assets:
+        - Import assets and emblems and place in header, footer
+
+
+Specific Pages:
+    Content Block 1:
+        - Title Card [The Lyre Project]
+        <main container>
+            Article title card float left
+            emblems float right (put image in)
+            background image (fill when assets transferred)
+        </m>
+
+    Content Block 2;
+        - Mission Statement / Values
+    Content Block 3;
+        - About Us / Meet the Singers
+        - Possibly half block of featured content [Theatre mode and pop forward on click]
+    Content Block 4;
+        - Find Our Socials
+    Content Block 5;
+        - Newsletter / Redirect (not sure if needed, can blend with socials)
+

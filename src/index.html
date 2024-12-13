@@ -1,129 +1,108 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
+
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico?v=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
+    <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
+    <script type="module" src="./js/index.js"></script>
+
     <title>The Lyre Project</title>
   </head>
 
-  <body style="background-color: #052014">
-    <style>
-        :root {
             font-family: monospace;
-            margin: auto 0;
-            text-align: center;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        .border {
-            border: 2px solid white;
-        }
-        .transparent {
-            background-color: transparent;
-        }
-        .container {
-            font-family: monospace;
-            min-height: 100vh;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            display: flex;
-            justify-content:space-between;
-            align-items: center;
-            border-bottom: dotted 4px black;
-        }
-        .header {
-            font-family: monospace;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 85px;
-            width: 100%;
-            padding: 20px 10vw;
-            z-index: 1000;
-
-        }
-        .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            height: 60px;
-            width: 100%;
-            padding: 20px 10vw;
-            z-index: 1000;
-        }
-        .small-button {
-            height: 50px;
-            width: 100px;
-            font-size: 12px;
-            box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
-            transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-            transition-property: color, background-color, border-color;
-        }
-        .small-button:hover {
-            background-color: white;
-            color: black;
-        }
-        a {
-            color: white;
-        }
-        li span {
-            position: relative;
-            left: -10px;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            width: auto\9;
-        }
-    </style>
-    <header class="header pico-background-red-400" id="header">
-        <div style="text-align: left;">
-            <nav style="font-size: 16px; vertical-align: middle;">
-                <li><strong style="color: white"><a href="#landing">The Lyre Project</a></strong></li>
-                    <div role="group">
-                        <li><a href="#mission">About</a></li>
-                        <li><a href="#recent">Music</a></li>
-                        <li><a href="#spare">Contact</a></li>
-                    </div>
+  <body>
+    <header class="header" id="header">
+        <div style="flex-direction: row;">
+            <nav style="vertical-align: middle;">
+                <div>
+                    <img src="../assets/TLP-Stamp.png" style="width: clamp(50px, 6vw, 100px);">
+                </div>
+                <div role="group" style="justify-content: flex; text-align: right;">
+                    <li><a href="#mission">About</a></li>
+                    <li><a href="#singers">Singers</a></li>
+                    <li><a href="#recent">Projects</a></li>
+                </div>
             </nav>
         </div>
     </header>
     
-    <main class="container pico-background-jade-700" id="landing">
+    <main class="container landing" id="landing">
         <div class="content transparent">
             <img src="/assets/emblem-text.png" alt="Emblem Logo w/ text" style="width: 80%; height: 80%">
         </div>
-        <article class="content pico-background-jade-600">
-
-        </article>
     </main>
 
-    <main class="container pico-background-jade-600" id="mission" style="flex-direction: column; justify-content: center">
-        <img src="/assets/emblem-s.png" alt="Emblem Small" style="display: block; width: 25%; height: 25%; padding: 5vw 5vh; margin-left: auto; margin-right: auto;">
-        <article class="content transparent" style="font-family:'Times New Roman', Times, serif;">"Rooted in the rich tradition of Catholic sacred music, our ensemble is dedicated to glorifying God through song, fostering a deeper connection to faith and community. We seek to inspire worship, enrich liturgical celebrations, and uplift hearts by sharing the beauty of choral music with people of all backgrounds. Guided by humility, faith, and a passion for music, we strive to bring hope and harmony to our parish and beyond."</article>
+    <main class="container mission" id="mission" style="flex-direction: column; justify-content: center">
+        <!-- <img src="/assets/emblem-s.png" alt="Emblem Small" style="display: block; width: clamp(300px, 30vw, 500px); padding: 3vw 10vh; margin-left: auto; margin-right: auto;"> -->
+        <img src="/assets/emblem-s.png" alt="Emblem Small" style="display: block; width: clamp(300px, 30vw, 500px); padding: 3vw 10vh; margin-left: auto; margin-right: auto;">
+        <article class="content transparent">"A young adult choral ensemble singing sacred music in Vancouver, BC."</article>
     </main>
-
-    <main class="container pico-background-jade-600" id="about" style="flex-direction: column; justify-content: center;">
-        <article class="content pico-background-jade-500">
+    <main class="container singers" id="singers">
+        <!-- <article class="content pico-background-jade-400">
             About Us / Meet the Singers
-        </article>
-        <article>
-            Placeholder for Carousel
+        </article> -->
+        <article class="content transparent" style="max-width: clamp(200px, 60vw, 800px);">
+            <div class="embla">
+                <div class="embla__viewport">
+                    <div class="embla__container">
+                        <div class="embla__slide">
+                            <img src="/assets/emblem-s.png" alt="Emblem Small">
+                            <div>Slide Text that sits next to this image as a description of who this is</div>
+                        </div>
+                        <div class="embla__slide">
+                            <img src="/assets/emblem-s.png" alt="Emblem Small">
+                            <div>Slide Text that sits next to this image as a description of who this is</div>
+                        </div>
+                        <div class="embla__slide">
+                            <img src="/assets/emblem-s.png" alt="Emblem Small">
+                            <div>Slide Text that sits next to this image as a description of who this is</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="embla__controls">
+                    <!-- <button class="transparent small-button embla__prev"><</button>
+                    <button class="transparent small-button embla__next">></button> -->
+                    <div class="embla__dots"></div>
+                </div>
+            </div>
         </article>
     </main>
-    <main class="container pico-background-jade-600" id="recent">
-        <article class="content pico-background-jade-500">
-            Recent work
-        </article>
-    </main>
-    <main class="container pico-background-jade-700" id="spare">
-        <article class="content pico-background-jade-600">
-            Spare Block
-        </article>
+    <main class="container projects" style="display: flex; flex-direction: column;" id="recent">
+        <div class="title-container">
+            Recent Projects
+            <a style="text-decoration: none" href="https://www.youtube.com/@TheLyreProject">
+                <svg    id="YouTube SVG @ tablericons"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                >
+                    <path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z" />
+                    <path d="M10 9l5 3l-5 3z" />
+                </svg>
+            </a>
+        </div>
+        <div class="media-container">
+            <div class="border video-container">
+                <iframe src="https://www.youtube.com/embed/Swnf2qILrrw" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="border video-container">
+                <iframe src="https://www.youtube.com/embed/E385afXOIXg" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
     </main>
     <footer class="footer pico-background-blue-800" id="footer">
         <div role="group" style="text-align: left; font-size: 16px;">
@@ -136,38 +115,44 @@
                 <li><span><a href="#">LinkTree</a></span></li>
             </div> -->
             <div role="group" style="font-size: 0.8rem; float: right; display: flex; gap: 10px;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7ZM9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12Z"
-                        fill="currentColor"
-                    />
-                    <path
-                        d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z"
-                        fill="currentColor"
-                    />
-                    <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M5 1C2.79086 1 1 2.79086 1 5V19C1 21.2091 2.79086 23 5 23H19C21.2091 23 23 21.2091 23 19V5C23 2.79086 21.2091 1 19 1H5ZM19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z"
-                        fill="currentColor"
-                    />
-                </svg>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M9.19795 21.5H13.198V13.4901H16.8021L17.198 9.50977H13.198V7.5C13.198 6.94772 13.6457 6.5 14.198 6.5H17.198V2.5H14.198C11.4365 2.5 9.19795 4.73858 9.19795 7.5V9.50977H7.19795L6.80206 13.4901H9.19795V21.5Z"
-                        fill="currentColor"
-                    />
-                </svg>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M11 17.9C8.71776 17.4367 7 15.419 7 13V7C7 4.23858 9.23858 2 12 2C14.7614 2 17 4.23858 17 7V13C17 15.419 15.2822 17.4367 13 17.9V21C13 21.5523 12.5523 22 12 22C11.4477 22 11 21.5523 11 21V17.9ZM12 4C13.6569 4 15 5.34315 15 7V13C15 14.3062 14.1652 15.4175 13 15.8293V11C13 10.4477 12.5523 10 12 10C11.4477 10 11 10.4477 11 11V15.8293C9.83481 15.4175 9 14.3062 9 13V7C9 5.34315 10.3431 4 12 4Z"
-                        fill="currentColor"
-                    />
-                </svg>
+                <a style="text-decoration: none" href="https://www.instagram.com/thelyreproject/">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7ZM9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12Z"
+                            fill="currentColor"
+                        />
+                        <path
+                            d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z"
+                            fill="currentColor"
+                        />
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M5 1C2.79086 1 1 2.79086 1 5V19C1 21.2091 2.79086 23 5 23H19C21.2091 23 23 21.2091 23 19V5C23 2.79086 21.2091 1 19 1H5ZM19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z"
+                            fill="currentColor"
+                        />
+                    </svg>
+                </a>
+                <a style="text-decoration: none;" href="https://www.facebook.com/profile.php?id=100086745782301">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9.19795 21.5H13.198V13.4901H16.8021L17.198 9.50977H13.198V7.5C13.198 6.94772 13.6457 6.5 14.198 6.5H17.198V2.5H14.198C11.4365 2.5 9.19795 4.73858 9.19795 7.5V9.50977H7.19795L6.80206 13.4901H9.19795V21.5Z"
+                            fill="currentColor"
+                        />
+                    </svg>
+                </a>
+                <a href="https://linktr.ee/thelyreproject?fbclid=PAZXh0bgNhZW0CMTEAAaaIezdDtTB5pKZ7ARV68Spt6-PygEIkRRZKwP_SSu_ms-gK-aMdCohpm0Y_aem__IBGKTSRK8LcU4B2-3RAOg">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M11 17.9C8.71776 17.4367 7 15.419 7 13V7C7 4.23858 9.23858 2 12 2C14.7614 2 17 4.23858 17 7V13C17 15.419 15.2822 17.4367 13 17.9V21C13 21.5523 12.5523 22 12 22C11.4477 22 11 21.5523 11 21V17.9ZM12 4C13.6569 4 15 5.34315 15 7V13C15 14.3062 14.1652 15.4175 13 15.8293V11C13 10.4477 12.5523 10 12 10C11.4477 10 11 10.4477 11 11V15.8293C9.83481 15.4175 9 14.3062 9 13V7C9 5.34315 10.3431 4 12 4Z"
+                            fill="currentColor"
+                        />
+                    </svg>
+                </a>
             </div>
         </div>
     </footer>

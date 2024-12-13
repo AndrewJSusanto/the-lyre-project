@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "embla-carousel": "^8.5.1",
+    "embla-carousel-autoplay": "^8.5.1"
+  }
+}

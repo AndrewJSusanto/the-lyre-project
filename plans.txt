@@ -1,14 +1,24 @@
 Order of Operations:
     Nav Bar:
-        - Add forked pages or scroll manip on href click
+        -̶ A̶d̶d̶ f̶o̶r̶k̶e̶d̶ p̶a̶g̶e̶s̶ o̶r̶ s̶c̶r̶o̶l̶l̶ m̶a̶n̶i̶p̶ o̶n̶ h̶r̶e̶f̶ c̶l̶i̶c̶k̶
     Pages:
         - Sequence of page cards structured as pictured in mock up
+            -̶ L̶a̶n̶d̶i̶n̶g̶
+            - Mission Statement
+            - About
+            - Socials
+            - Newsletter
     Navigation QOL:
-        - vertical dots scrol indicator on right side
+        - vertical dots scroll indicator on right side
         - sticky scroll for page nav
     Assets:
         - Import assets and emblems and place in header, footer
 
+Order of Priority:
+    - Page sequence default structure
+    - Remove drop shadows from assets
+    - JavaScript event handlers for page nav and recent socials
+    - Asset import
 
 Specific Pages:
     Content Block 1:

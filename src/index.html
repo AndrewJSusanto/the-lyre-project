@@ -16,8 +16,14 @@
             margin: auto 0;
             text-align: center;
         }
+        html {
+            scroll-behavior: smooth;
+        }
         .border {
             border: 2px solid white;
+        }
+        .transparent {
+            background-color: transparent;
         }
         .container {
             font-family: monospace;
@@ -25,7 +31,7 @@
             padding-top: 20px;
             padding-bottom: 20px;
             display: flex;
-            justify-content:space-evenly;
+            justify-content:space-between;
             align-items: center;
             border-bottom: dotted 4px black;
         }
@@ -68,50 +74,58 @@
             position: relative;
             left: -10px;
         }
+        img {
+            max-width: 100%;
+            height: auto;
+            width: auto\9;
+        }
     </style>
-    <header class="header pico-background-red-400">
+    <header class="header pico-background-red-400" id="header">
         <div style="text-align: left;">
             <nav style="font-size: 16px; vertical-align: middle;">
-                <li><strong style="color: white">The Lyre Project</strong></li>
+                <li><strong style="color: white"><a href="#landing">The Lyre Project</a></strong></li>
                     <div role="group">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Music</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#mission">About</a></li>
+                        <li><a href="#recent">Music</a></li>
+                        <li><a href="#spare">Contact</a></li>
                     </div>
             </nav>
         </div>
     </header>
     
-    <main class="container pico-background-jade-700" id="box1">
+    <main class="container pico-background-jade-700" id="landing">
+        <div class="content transparent">
+            <img src="/assets/emblem-text.png" alt="Emblem Logo w/ text" style="width: 80%; height: 80%">
+        </div>
         <article class="content pico-background-jade-600">
-            <p style="font-size: 48px; line-height: 6;">The Lyre Project</p>
-        </article>
-        <article class="content pico-background-jade-600" style="margin: auto 0">
-            <p style="vertical-align: middle; line-height: 3;">Placeholder</p>
+
         </article>
     </main>
 
-    <main class="container pico-background-jade-600" id="box2">
-        <article class="content pico-background-jade-500">
-            Mission Statement / Values
-        </article>
+    <main class="container pico-background-jade-600" id="mission" style="flex-direction: column; justify-content: center">
+        <img src="/assets/emblem-s.png" alt="Emblem Small" style="display: block; width: 25%; height: 25%; padding: 5vw 5vh; margin-left: auto; margin-right: auto;">
+        <article class="content transparent" style="font-family:'Times New Roman', Times, serif;">"Rooted in the rich tradition of Catholic sacred music, our ensemble is dedicated to glorifying God through song, fostering a deeper connection to faith and community. We seek to inspire worship, enrich liturgical celebrations, and uplift hearts by sharing the beauty of choral music with people of all backgrounds. Guided by humility, faith, and a passion for music, we strive to bring hope and harmony to our parish and beyond."</article>
     </main>
-    <main class="container pico-background-jade-500" id="box3">
-        <article class="content pico-background-jade-400">
+
+    <main class="container pico-background-jade-600" id="about" style="flex-direction: column; justify-content: center;">
+        <article class="content pico-background-jade-500">
             About Us / Meet the Singers
         </article>
-    </main>
-    <main class="container pico-background-jade-600" id="box4">
-        <article class="content pico-background-jade-500">
-            Find Our Socials
+        <article>
+            Placeholder for Carousel
         </article>
     </main>
-    <main class="container pico-background-jade-700" id="box5">
+    <main class="container pico-background-jade-600" id="recent">
+        <article class="content pico-background-jade-500">
+            Recent work
+        </article>
+    </main>
+    <main class="container pico-background-jade-700" id="spare">
         <article class="content pico-background-jade-600">
             Spare Block
         </article>
     </main>
-    <footer class="footer pico-background-blue-800">
+    <footer class="footer pico-background-blue-800" id="footer">
         <div role="group" style="text-align: left; font-size: 16px;">
             <a>
                 Footer Emblem

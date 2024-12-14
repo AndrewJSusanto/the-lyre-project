@@ -8,12 +8,14 @@
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico?v=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="/src/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
 
     <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
     <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
-    <script type="module" src="./js/index.js"></script>
-
+    <script type="module" src="/src/js/index.js"></script>
     <title>The Lyre Project</title>
   </head>
   <body>
@@ -21,7 +23,7 @@
         <div style="flex-direction: row;">
             <nav style="vertical-align: middle;">
                 <div>
-                    <img src="../assets/TLP-Stamp.png" style="width: clamp(50px, 6vw, 100px);">
+                    <img src="/assets/TLP-Stamp.png" style="width: clamp(50px, 6vw, 100px);">
                 </div>
                 <div role="group" style="justify-content: flex; text-align: right;">
                     <li><a href="#mission">About</a></li>
@@ -33,35 +35,60 @@
     </header>
     
     <main class="container landing" id="landing">
-        <div class="content transparent">
+        <div class="transparent">
             <img src="/assets/emblem-text.png" alt="Emblem Logo w/ text" style="width: 80%; height: 80%">
         </div>
     </main>
 
-    <main class="container mission" id="mission" style="flex-direction: column; justify-content: center">
+    <main class="container mission" id="mission" style="flex-direction: column; justify-content: center;">
         <!-- <img src="/assets/emblem-s.png" alt="Emblem Small" style="display: block; width: clamp(300px, 30vw, 500px); padding: 3vw 10vh; margin-left: auto; margin-right: auto;"> -->
-        <img src="/assets/emblem-s.png" alt="Emblem Small" style="display: block; width: clamp(300px, 30vw, 500px); padding: 3vw 10vh; margin-left: auto; margin-right: auto;">
-        <article class="content transparent">"A young adult choral ensemble singing sacred music in Vancouver, BC."</article>
+        <img src="/assets/emblem-s.png" alt="Emblem Small" style="position: fixed; top: 5vh; display: block; width: clamp(200px, 5vw, 500px); padding: 3vw 8vh; margin-left: auto; margin-right: auto;">
+        <div class="shadow" style="position: absolute; bottom: 20vh; font-family: 'Prata', serif;">
+            A young adult choral ensemble singing sacred music from Vancouver, BC.
+        </div>
     </main>
-    <main class="container singers" id="singers">
-        <!-- <article class="content pico-background-jade-400">
-            About Us / Meet the Singers
-        </article> -->
-        <article class="content transparent" style="max-width: clamp(200px, 60vw, 800px);">
+    <main class="container singers" id="singers" style="flex-direction:column;">
+        
+        <article class="shadow" style="max-width: clamp(200px, 50vw, 800px); max-height: clamp(700px, 60vh, 1400px)">
             <div class="embla">
+                <p style="font-size: x-large; color: white">Voices</p>
                 <div class="embla__viewport">
                     <div class="embla__container">
                         <div class="embla__slide">
-                            <img src="/assets/emblem-s.png" alt="Emblem Small">
-                            <div>Slide Text that sits next to this image as a description of who this is</div>
+                            <img class="shadow" src="/assets/headshots/Chris.jpg">
+                            <div class="desc"> Chris Susanto<br>Founder, Tenor</div>
                         </div>
                         <div class="embla__slide">
-                            <img src="/assets/emblem-s.png" alt="Emblem Small">
-                            <div>Slide Text that sits next to this image as a description of who this is</div>
+                            <img class="shadow" src="/assets/headshots/Anthony.jpg">
+                            <div class="desc">Anthony Nootebos<br>Bass/Baritone</div>
                         </div>
                         <div class="embla__slide">
-                            <img src="/assets/emblem-s.png" alt="Emblem Small">
-                            <div>Slide Text that sits next to this image as a description of who this is</div>
+                            <img class="shadow" src="/assets/headshots/Chiara.jpg">
+                            <div class="desc">Chiara Susanto<br>Soprano</div>
+                        </div>
+                        <div class="embla__slide">
+                            <img class="shadow" src="/assets/headshots/Christine.jpg">
+                            <div class="desc">Christine Uy<br>Soprano</div>
+                        </div>
+                        <div class="embla__slide">
+                            <img class="shadow" src="/assets/headshots/Gabriel.jpg">
+                            <div class="desc">Gabriel Uy<br>Tenor</div>
+                        </div>
+                        <div class="embla__slide">
+                            <img class="shadow" src="/assets/headshots/Jason.jpeg">
+                            <div class="desc">Jason Lau<br>Bass/Baritone</div>
+                        </div>
+                        <div class="embla__slide">
+                            <img class="shadow" src="/assets/headshots/Megan.jpg">
+                            <div class="desc">Megan Delfin<br>Alto</div>
+                        </div>
+                        <div class="embla__slide">
+                            <img class="shadow" src="/assets/headshots/Michelle.jpg">
+                            <div class="desc">Michelle Uy<br>Alto</div>
+                        </div>
+                        <div class="embla__slide">
+                            <img class="shadow" src="/assets/headshots/Francis.jpg">
+                            <div class="desc">Francis Tan<br>Bass/Baritone</div>
                         </div>
                     </div>
                 </div>
@@ -102,10 +129,9 @@
             </div>
         </div>
     </main>
-    <footer class="footer pico-background-blue-800" id="footer">
+    <footer class="footer transparent" id="footer">
         <div role="group" style="text-align: left; font-size: 16px;">
             <a>
-                Footer Emblem
             </a>
             <!-- <div role="group" style="font-size: 0.8rem; float: right; display: flex; gap: 10px;">
                 <li><span><a href="#">Instagram</a></span></li>

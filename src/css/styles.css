@@ -182,7 +182,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 20px;
     overflow: hidden;
     transform: translate3d(0, 0, 0);
     flex: 0 0 var(--slide-size);
@@ -284,6 +284,9 @@ img {
         --slide-height: 19rem;
         --slide-spacing: 1rem;
         --slide-size: 100%;
+    }
+    .embla__dot {
+        transform: scale(0.5);
     }
 }
 svg:hover {

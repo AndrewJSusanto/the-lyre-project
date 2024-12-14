@@ -2,7 +2,7 @@ import { addDotBtnsAndClickHandlers } from './buttons.js';
 
 const emblaNode = document.querySelector('.embla');
 const options = { loop: false };
-const autoplayOptions = { delay: 5000, stoponInteraction: true};
+const autoplayOptions = { delay: 10000, stoponInteraction: true};
 const plugins = [EmblaCarouselAutoplay(autoplayOptions)];
 
 const rootNode = document.querySelector('.embla');

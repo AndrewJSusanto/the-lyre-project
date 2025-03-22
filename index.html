@@ -9,9 +9,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css">
     <link rel="stylesheet" href="/src/css/styles.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    <!-- Serif -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
 
     <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
     <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
@@ -23,112 +28,219 @@
         <div style="flex-direction: row;">
             <nav style="vertical-align: middle;">
                 <div>
-                    <img src="/assets/TLP-Stamp.png" style="width: clamp(50px, 6vw, 100px);">
+                    <img src="/assets/logos/TLP-Stamp.png" style="width: clamp(50px, 6vw, 100px);">
                 </div>
-                <div role="group" style="justify-content: flex; text-align: right;">
-                    <li><a href="#mission">About</a></li>
-                    <li><a href="#singers">Singers</a></li>
-                    <li><a href="#recent">Projects</a></li>
+                <div class='ibm-ps-heading' role="group" style="justify-content: flex; text-align: right;">
+                    <li><a href="#mission">ABOUT</a></li>
+                    <li><a href="#singers">SINGERS</a></li>
+                    <li><a href="#recent">PROJECTS</a></li>
                 </div>
             </nav>
         </div>
     </header>
-    
+
     <main class="container landing" id="landing" style="flex-direction: column;">
+        <video autoplay muted loop id="IWLME" style="width: 100vw; height: 100vh; object-fit: cover;">
+            <source src="/assets/video/IWLME-loop-0.95.mp4" type="video/mp4">
+          </video>
         <div class="transparent">
-            <img src="/assets/emblem-text.png" alt="Emblem Logo w/ text" style="width: 80%; height: 80%">
+            <img src="/assets/logos/emblem-text.png" alt="Emblem Logo w/ text" style="width: 55%; height: 55%">
         </div>
-        <p style="font-size: medium"><br><br>in concert: 
-            <a href="https://www.facebook.com/events/919023873077679">down to earth, dec 13th @ 7:30 pm</a>
-        </p>
     </main>
 
-    <main class="container mission" id="mission" style="flex-direction: column; justify-content: center;">
+    <main class="container mission" id="mission" style="background-color: var(--main-evergreen-half); flex-direction: column; justify-content: center;">
         <!-- <img src="/assets/emblem-s.png" alt="Emblem Small" style="display: block; width: clamp(300px, 30vw, 500px); padding: 3vw 10vh; margin-left: auto; margin-right: auto;"> -->
-        <img src="/assets/emblem-s.png" alt="Emblem Small" style="position: fixed; top: 5vh; display: block; width: clamp(200px, 5vw, 500px); padding: 3vw 8vh; margin-left: auto; margin-right: auto;">
-        <div style="position: absolute; bottom: 20vh; font-family: 'Prata', serif;">
-            A young adult choral ensemble singing sacred music from Vancouver, BC.
+        <!-- <img src="/assets/emblem-s.png" alt="Emblem Small" style="position: fixed; top: 5vh; display: block; width: clamp(200px, 5vw, 500px); padding: 3vw 8vh; margin-left: auto; margin-right: auto;">
+        <h2 class="figtree-sub" style="position: absolute; bottom: 20vh;">
+            A young adult choral ensemble singing sacred music from Vancouver, BC, established in the heart of Marpole.
+        </h2> -->
+
+        <!-- Set up container in two halves; left half with About Us, right half with group image truncated at bottom -->
+        <div class="img-wrapper" style="width: 70%; margin-bottom: 2rem;">
+            <img src="/assets/logos/emblem-s.png" alt="Emblem Small" style="width: clamp(100px, 8vw, 300px); float: left;">
+        </div>
+        <div class="img-wrapper" style="position: fixed; bottom: 0%; right: 7%; max-width: 40%; max-height: 80%; height: auto;">
+            <img style="border-radius: 45% 45% 0px 0px;" src="/assets/TLP-Group-Outside-Cropped.JPG">
+        </div>
+        <div class="img-wrapper" style="opacity: 0.5; position: fixed; right: 5%; top: 5%; max-width: 18%; max-height: 18%;">
+            <img src="/assets/logos/TLP-stamplogo-lily.png">
+        </div>
+        <div class="wrapper" style="display: grid; grid-template-columns: 2fr 2fr; width: 70%; gap: 4rem;">
+            <div style="color: var(--neutral-lily);">
+                <h1 class="ibm-serif" style="font-style: italic; font-size: 3rem; text-align: left; margin: auto 0; color: inherit;"> About Us </h1>
+                <h2 class="figtree" style="font-weight: 100; font-size: 0.65rem; text-align: left; color: inherit;">
+                    The Lyre Project is a choral ensemble dedicated
+                    to connecting people to the beauty and depth of
+                    sacred choral music. We strive for musical
+                    excellence in a way that is authentic to each of us,
+                    and are inspired to make the richness of choral
+                    music accessible and personal. We find immense
+                    joy and fulfillment in making beautiful music while
+                    journeying together as professionals, encouraging
+                    each other to grow in love and holiness.
+                </h2>
+            </div>
+            <div>
+                <!-- <div class="img-wrapper">
+                    <img style="border-radius: 45% 45% 0px 0px;" src="/assets/TLP-Group-Outside-Cropped.JPG">
+                </div> -->
+            </div>
         </div>
     </main>
     <main class="container singers" id="singers" style="flex-direction:column;">
-        
-        <article class="shadow" style="max-width: clamp(200px, 50vw, 800px); max-height: clamp(700px, 60vh, 1400px)">
-            <div class="embla">
-                <p style="font-size: x-large; color: white">Voices</p>
-                <div class="embla__viewport">
-                    <div class="embla__container">
-                        <div class="embla__slide">
-                            <img class="shadow" src="/assets/headshots/Chris.jpg">
-                            <div class="desc"> Chris Susanto<br>Founder, Tenor</div>
+        <div>
+            <h1 class="ibm-ps-heading" style="font-weight: 400; font-style: bold; letter-spacing: 0.2rem; color: var(--main-finest); margin-top: 15%;">OUR SINGERS</h1>
+        </div>
+        <div class="img-wrapper" style="opacity: 0.3; position: fixed; left: 0%; max-width: 35%; overflow: hidden;">
+            <img src="/assets/logos/TLP-stamplogo-evergreen.png">
+        </div>
+        <div class="embla">
+            <div class="embla__viewport">
+                <div class="embla__container">
+                    <div class="embla__slide" id="Chris">
+                        <img loading="lazy" class="" src="/assets/headshots/Chris.jpg">
+                        <div class="desc slide-text">
+                            <div class="desc-name ibm-serif text-green">Chris Susanto</div>
+                            <div class="desc-part ibm-serif text-green" style="font-style: italic;">Tenor</div>
+                            <div class="desc-desc figtree-sub text-green">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus nunc a hendrerit dictum. Etiam.
+                            </div>
                         </div>
-                        <div class="embla__slide">
-                            <img class="shadow" src="/assets/headshots/Anthony.jpg">
-                            <div class="desc">Anthony Nootebos<br>Bass/Baritone</div>
+                    </div>
+                    <div class="embla__slide" id="Anthony">
+                        <img loading="lazy" class="shadow" src="/assets/headshots/Anthony.jpg">
+                        <div class="desc slide-text">
+                            <div class="desc-name ibm-serif text-green">Anthony Nootebos</div>
+                            <div class="desc-part ibm-serif text-green" style="font-style: italic;">Bass</div>
+                            <div class="desc-desc figtree-sub text-green">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus nunc a hendrerit dictum. Etiam.
+                            </div>
                         </div>
-                        <div class="embla__slide">
-                            <img class="shadow" src="/assets/headshots/Chiara.jpg">
-                            <div class="desc">Chiara Susanto<br>Soprano</div>
+                    </div>
+                    <div class="embla__slide" id="Chiara">
+                        <img loading="lazy" class="shadow" src="/assets/headshots/Chiara.jpg">
+                        <div class="desc slide-text">
+                            <div class="desc-name ibm-serif text-green">Chiara Susanto</div>
+                            <div class="desc-part ibm-serif text-green" style="font-style: italic;">Soprano</div>
+                            <div class="desc-desc figtree-sub text-green">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus nunc a hendrerit dictum. Etiam.
+                            </div>
                         </div>
-                        <div class="embla__slide">
-                            <img class="shadow" src="/assets/headshots/Christine.jpg">
-                            <div class="desc">Christine Uy<br>Soprano</div>
+                    </div>
+                    <div class="embla__slide" id="Christine">
+                        <img loading="lazy" class="shadow" src="/assets/headshots/Christine.jpg">
+                        <div class="desc slide-text">
+                            <div class="desc-name ibm-serif text-green">Christine Uy</div>
+                            <div class="desc-part ibm-serif text-green" style="font-style: italic;">Soprano</div>
+                            <div class="desc-desc figtree-sub text-green">
+                                Our highest soprano and baker-in-residence, Christine also vibe-checks the vast majority of copy that happens at TLP, including this.
+                            </div>
                         </div>
-                        <div class="embla__slide">
-                            <img class="shadow" src="/assets/headshots/Gabriel.jpg">
-                            <div class="desc">Gabriel Uy<br>Tenor</div>
+                    </div>
+                    <div class="embla__slide" id="Gabriel">
+                        <img loading="lazy" class="shadow" src="/assets/headshots/Gabriel.jpg">
+                        <div class="desc slide-text">
+                            <div class="desc-name ibm-serif text-green">Gabriel Uy</div>
+                            <div class="desc-part ibm-serif text-green" style="font-style: italic;">Tenor</div>
+                            <div class="desc-desc figtree-sub text-green">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus nunc a hendrerit dictum. Etiam.
+                            </div>
                         </div>
-                        <div class="embla__slide">
-                            <img class="shadow" src="/assets/headshots/Jason.jpeg">
-                            <div class="desc">Jason Lau<br>Bass/Baritone</div>
+                    </div>
+                    <div class="embla__slide" id="Jason">
+                        <img loading="lazy" class="shadow" src="/assets/headshots/Jason.jpeg">
+                        <div class="desc slide-text">
+                            <div class="desc-name ibm-serif text-green">Jason Lau</div>
+                            <div class="desc-part ibm-serif text-green" style="font-style: italic;">Baritone</div>
+                            <div class="desc-desc figtree-sub text-green">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus nunc a hendrerit dictum. Etiam.
+                            </div>
                         </div>
-                        <div class="embla__slide">
-                            <img class="shadow" src="/assets/headshots/Megan.jpg">
-                            <div class="desc">Megan Delfin<br>Alto</div>
+                    </div>
+                    <div class="embla__slide" id="Megan">
+                        <img loading="lazy" class="shadow" src="/assets/headshots/Megan.jpg">
+                        <div class="desc slide-text">
+                            <div class="desc-name ibm-serif text-green">Megan Delfin</div>
+                            <div class="desc-part ibm-serif text-green" style="font-style: italic;">Alto</div>
+                            <div class="desc-desc figtree-sub text-green">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus nunc a hendrerit dictum. Etiam.
+                            </div>
                         </div>
-                        <div class="embla__slide">
-                            <img class="shadow" src="/assets/headshots/Michelle.jpg">
-                            <div class="desc">Michelle Uy<br>Alto</div>
+                    </div>
+                    <div class="embla__slide" id="Michelle">
+                        <img loading="lazy" class="shadow" src="/assets/headshots/Michelle.jpg">
+                        <div class="desc slide-text">
+                            <div class="desc-name ibm-serif text-green">Michelle Uy</div>
+                            <div class="desc-part ibm-serif text-green" style="font-style: italic;">Alto</div>
+                            <div class="desc-desc figtree-sub text-green">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus nunc a hendrerit dictum. Etiam.
+                            </div>
                         </div>
-                        <div class="embla__slide">
-                            <img class="shadow" src="/assets/headshots/Francis.jpg">
-                            <div class="desc">Francis Tan<br>Bass/Baritone</div>
+                    </div>
+                    <div class="embla__slide" id="Francis">
+                        <img loading="lazy" class="shadow" src="/assets/headshots/Francis.jpg">
+                        <div class="desc slide-text">
+                            <div class="desc-name ibm-serif text-green">Francis Tan</div>
+                            <div class="desc-part ibm-serif text-green" style="font-style: italic;">Bass/Baritone</div>
+                            <div class="desc-desc figtree-sub text-green">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus nunc a hendrerit dictum. Etiam.
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="embla__controls">
-                    <!-- <button class="transparent small-button embla__prev"><</button>
-                    <button class="transparent small-button embla__next">></button> -->
-                    <div class="embla__dots"></div>
+                    <!-- <div class="embla__dots"></div> -->
+
+                    <div class="embla__buttons">
+                        <button class="embla__button embla__button--prev" type="button" style="justify-self: start;">
+                            <!-- @flowbite -->
+                                <!-- <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+                                </svg>    -->
+                            <!-- @ionicon  -->
+                            <ion-icon name="arrow-back-sharp"></ion-icon>
+                        </button>
+
+                        <button class="embla__button embla__button--next" type="button" style="justify-self: end;">
+                            <!-- @flowbite -->
+                                <!-- <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                                </svg>    -->
+                            <!-- @ionicon -->
+                            <ion-icon name="arrow-forward-sharp"></ion-icon>
+                        </button>
+                      </div>
                 </div>
             </div>
-        </article>
+        </div>
     </main>
     <main class="container projects" style="display: flex; flex-direction: column;" id="recent">
         <div class="title-container">
-            Recent Projects
-            <a style="text-decoration: none" href="https://www.youtube.com/@TheLyreProject">
-                <svg    id="YouTube SVG @ tablericons"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                >
-                    <path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z" />
-                    <path d="M10 9l5 3l-5 3z" />
-                </svg>
-            </a>
+            <h2 class="ibm-ps-heading" style="font-size: 1.5vw">- Recent Projects -<br>
+                <a style="text-decoration: none" href="https://www.youtube.com/@TheLyreProject">
+                    <svg    id="YouTube SVG @ tablericons"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                    >
+                        <path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z" />
+                        <path d="M10 9l5 3l-5 3z" />
+                    </svg>
+                </a>
+            </h2>
         </div>
         <div class="media-container">
             <div class="border video-container">
-                <iframe src="https://www.youtube.com/embed/Swnf2qILrrw" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe loading="lazy" src="https://www.youtube.com/embed/Swnf2qILrrw" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="border video-container">
-                <iframe src="https://www.youtube.com/embed/E385afXOIXg" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe loading="lazy" src="https://www.youtube.com/embed/E385afXOIXg" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </main>
@@ -178,5 +290,8 @@
             </div>
         </div>
     </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </body>
 </html>

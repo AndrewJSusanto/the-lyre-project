@@ -1,23 +1,139 @@
 :root {
-    font-family: 'Prata', serif;
     font-weight: 400;
     font-style: normal;
     margin: auto 0;
     text-align: center;
+    --main-evergreen: #004234;
+    --main-finest: #D0A86A;
+    --main-lyrica: #B07A45;
+    --main-cedar: #682E17;
+    --accent-balm: #9EBDA3;
+    --accent-maris: #023149;
+    --neutral-ledger: #231F1F;
+    --neutral-lily: #F0EAE3;
+
+    /* --main-evergreen-half: color-mix(in srgb, var(--main-evergreen), transparent 30%); */
+    --main-evergreen-half: #507468;
+    /* --neutral-lily-half: color-mix(in srgb, var(--neutral-lily), transparent 30%); */
+    --neutral-lily-half: #EFEAE2;
 }
-.prata-regular {
-    font-family: "Prata", serif;
-    font-weight: 400;
+
+/* FONT */
+.ibm-ps-heading {
+    font-family: "IBM Plex Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 325;
     font-style: normal;
-}  
-body {
-    font-size: 16px;
-    font-family: "Prata", serif;
-    background-color: #9FB5A9;
+    font-variation-settings:
+      "wdth" 100;
+  }
+
+.figtree-sub {
+    font-family: "Figtree", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+.ibm-serif {
+    font-family: "IBM Plex Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+.text-green {
+    color: var(--main-evergreen)
 }
+
+.text-outline {
+    color: white;
+    text-shadow:
+    -0.5px -0.5px 0 #000,
+    0.5px -0.5px 0 #000,
+    -0.5px 0.5px 0 #000,
+    0.5px 0.5px 0 #000;  
+}
+
+.contrast {
+    background: inherit;
+    background-clip: text;
+    color: transparent;
+    filter:
+        sepia(5)
+        saturate(100)
+        invert(1)
+        grayscale(1)
+        contrast(9);
+}
+
+.blending {
+    mix-blend-mode: difference;
+    backdrop-filter: grayscale(1) contrast(100);
+    background-color: black;
+}
+
+/* BASE */
+
 html {
     scroll-behavior: smooth;
+    font-size: 2vw;
+    font-family: "Figtree", serif;
 }
+body {
+    background-color: var(--neutral-lily);
+}
+
+h1 {
+    font-family: inherit;
+    font-size: 1rem;
+}
+h2 {
+    font-family: inherit;
+    font-size: 0.6rem;
+}
+p {
+    color: var(--neutral-lily);
+}
+
+a {
+    color: white;
+    font-size: 0.65rem;
+}
+a:hover {
+    /* text-shadow:
+    -0.5px -0.5px 0 #000,
+    0.5px -0.5px 0 #000,
+    -0.5px 0.5px 0 #000,
+    0.5px 0.5px 0 #000;   */
+    color: var(--accent-maris);
+    font-weight: 550;
+    text-shadow:
+    -0.5px -0.5px 0 #fff,
+    0.5px -0.5px 0 #fff,
+    -0.5px 0.5px 0 #fff,
+    0.5px 0.5px 0 #fff,
+    -2px -5px 0px var(--main-lyrica);
+    transition: 0.15s ease 0s;
+}
+li span {
+    position: relative;
+    left: -10px;
+}
+
+/* CARD */
+
+article {
+    box-shadow: none !important;
+    font-size: 0.7rem;
+    max-height: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    flex: 1 1 auto;
+}
+
 .border {
     border: 2px solid white;
 }
@@ -25,51 +141,33 @@ html {
     background-color: transparent;
 }
 
-.landing {
-    background-color: #55776c;
-}
-.mission {
-    background-color: #55776c;
-    background-image: url('/assets/TLP-Group-Crop.jpg');
-    background-size: contain;
-    background-position: center;
-    border: 20px solid #55776c;
-    top: 30px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    box-sizing: border-box;
-}
-.singers {
-    background-color: #55776c;
-}
-.projects {
-    background-color: #55776c;
-}
-.content {
-    background-color: #4b3930;
-}
-
+/* CONTAINER */
 .container {
     min-height: 100vh;
+    max-height: 100vh;
+    min-width: 100vw;
+    max-width: 100vw;
     padding-top: 20px;
     padding-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(5px);
-    box-shadow: -8px 0 5px rgba(0, 0, 0, 0.3), 8px 0 5px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
 }
+
+/* HEADER, FOOTER */
+
 .header {
     position: fixed;
     top: 0;
     left: 0;
     height: 85px;
     width: 100%;
-    padding: 20px 15vw;
+    padding: 20px 2vw;
     z-index: 1000;
 
 }
+
 .footer {
     position: fixed;
     bottom: 0;
@@ -79,6 +177,8 @@ html {
     padding: 20px 10vw;
     z-index: 1000;
 }
+
+/* FOOTER ELEMENTS, SM ICONS */
 .small-button {
     height: 50px;
     width: 100px;
@@ -91,21 +191,11 @@ html {
     background-color: white;
     color: black;
 }
-a {
-    color: white;
-}
-a:hover {
-    color: #452e23;
-}
-li span {
-    position: relative;
-    left: -10px;
-}
+
 .title-container {
     text-align: center;
     padding: 20px 0;
     color: white;
-    margin-bottom: 30px;
 }
 .media-container {
     display: flex;
@@ -161,32 +251,68 @@ img {
     height: 100%;
 }
 
+/* CARD SPECIFIC */
+.landing {
+    background-color: var(--main-evergreen);
+}
+
+.mission {
+    /* background-color: #55776c; */
+    background-color: var(--main-evergreen);
+    /* background-image: url('/assets/TLP-Group-Crop.jpg'); */
+    background-size: contain;
+    background-position: center;
+    top: 30px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    box-sizing: border-box;
+}
+.singers {
+    background-color: var(--neutral-lily-half);
+}
+.projects {
+    background-color: var(--main-evergreen);
+}
+.content {
+    background-color: #4b3930;
+}
 
 .embla {
-    max-width: 48rem;
+    max-width: 80vw;
+    min-width: 0;
+    max-height: 80vh;
+    min-height: 0;
     margin: auto;
     --slide-height: 19rem;
     --slide-spacing: 1rem;
     --slide-size: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 .embla__viewport {
     overflow: hidden;
   }
 .embla__container {
     display: flex;
+    height: auto;
+    max-height: inherit;
+    max-width: inherit;
     touch-action: pan-y pinch-zoom;
     margin-left: calc(var(--slide-spacing) * -1);
 }
 .embla__slide {
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10vw;
     overflow: hidden;
     transform: translate3d(0, 0, 0);
     flex: 0 0 var(--slide-size);
     min-width: 0;
+    box-sizing: border-box;
     padding-left: var(--slide-spacing);
 }
 .embla__slide__number {
@@ -202,27 +328,46 @@ img {
   }
 .embla__slide img {
     display: block;
-    max-width: 50%; /* Scale image to 80% of viewport width */
+    border-radius: 999px;
+    max-width: 20vw; /* Scale image */
     width: auto; /* Maintain aspect ratio */
     height: auto; /* Maintain aspect ratio */
     object-fit: contain; /* Ensure the image fits without being cropped */
 }
 .embla__slide .slide-text {
-    max-width: 50%;
+    max-width: 40%;
     padding: 10px;
 }
 .embla__controls {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  justify-content: space-between;
-  gap: 1.2rem;
-  margin-top: 1.8rem;
+    width: 90%;
+    gap: 1.2rem;
+    margin-top: 1rem;
+    margin-inline: auto;
 }
+
+.desc {
+    text-align: left;
+}
+.desc-name {
+    /* styling here relates to font styling, not the font-family. font-family is explicitly chained with desc-name class (ie. class = desc-name ->ibm-serif<- */
+    font-size: 1.2rem;
+}
+.desc-part {
+    font-size: 1.1rem;
+    margin-bottom: 10%;
+}
+
+.desc-desc {
+    font-size: 0.6rem;
+}
+
+/* EMBLA DOTS (currently trialing arrows) */
 .embla__dots {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
+    align-self: center;
 }
 .embla__dot {
     -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
@@ -237,8 +382,8 @@ img {
     border: 0;
     padding: 0;
     margin: 5px;
-    width: 1rem;
-    height: 1rem;
+    width: 0.5rem;
+    height: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -246,8 +391,8 @@ img {
 }
 .embla__dot:after {
     box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
-    width: 1rem;
-    height: 1rem;
+    width: 0.5rem;
+    height: 0.5rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -257,6 +402,62 @@ img {
     box-shadow: inset 0 0 0 0.2rem var(--text-body);
     background-color: white;
 }
+
+/* EMBLA BUTTONS */
+.embla__buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.embla__button {
+    -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    touch-action: manipulation;
+    display: inline-flex;
+    text-decoration: none;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+    width: 2rem;
+    height: 2rem;
+    z-index: 1;
+    border-radius: 50%;
+    color: var(--text-body);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.embla__button:disabled {
+    color: var(--detail-high-contrast);
+}
+.embla__button__svg {
+    width: 35%;
+    height: 35%;
+}
+
+/* SVG OPENSOURCE */
+ion-icon {
+    font-size: 1.75rem;
+    color: var(--main-finest);
+}
+
+#IWLME {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    background: var(--main-evergreen-half);
+}
+
+
 
 @media (max-width: 768px) {
     body {

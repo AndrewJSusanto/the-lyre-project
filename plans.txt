@@ -164,4 +164,85 @@ Mar 21:
     - Goal: by the end of the day have the website live with information directing to the concert coming up in april
     - Is the current iteration of the website that is being developed ready for live? Not in full. The mobile layout needs work for all the new adjustments.
     - Plan today is to replace the link from the previous concert to the current concert, and push a live version of the website with all the changes early next week.
+
+    Active Notes:
+    - Concert link to facebook now live on the current website
+    - Need to increase brightness of photos for singers
+
+Mar 27 + 28:
+    Goals:
+        - Organizing styling before mobile overhaul
+        - Start on mobile overhaul
+            - Multiple ways to go about where to start:
+                - Sticky header on top resized/redesigned for mobile use (could use the three lines system top right for menu)
+                - Landing page with TLP crest resizing
+                - Sticky footer adjusted for logos to be visible (either larger or redesign footer)
+            - Overall text sizing for mobile devices needs to be fixed to standard before adjusting box placement
+    - adding a link for new concert on overhaul
+    - Added onclick event for landing page to pause/play autoplayed video with visual feedback
     
+    Active Notes:
+        - I think the best course of action would be to just see what the pages look like on mobile sizing first before doing anything.
+            - Notes after first look:
+                - Sticky Header:
+                    - Top Left and Top Right styling makes it so that the logo and the nav bar on top right are extremely small on mobile
+                    - Pivot to Threebar system on top right and remove TLP static logo on top left @mobile
+                - Landing:
+                    - TLP Center Crest too small, can be sized up
+                    - text size for concert redirect way too small, needs to be increased in reference to size of Crest
+                    - Tapping on screen functions correctly with pausing/playing bg video
+                - About Us:
+                    - Image currently is statically connected to bottom right of screen, needs adjusting and resizing for mobile
+                        - Something like image bottom center of phone, with About Us section directly on top
+                        - Refer to mock-up for correct spacing and sizing.
+                - Our Singers:
+                    - Carousel too small and designed for horizontal screens.
+                    - Research embla carousel for specifics on mobile styling; make it so the box is column based.
+                - Projects:
+                    - "Featured Projects" text and YT svg needs upsizing.
+                    - Looks alright, least amount of work to be done for it. Eventually maybe after clicking a video, animation to slide to center and dim background
+                - Sticky Footer:
+                    - Sticky footer sizing surprisingly decent, but needs adjusting for spacing. Currently sitting slightly offset to the right.
+                    - Center the three SVG options on the footer navbar.
+
+        - Course of action for today:
+            - Easiest first, experiment with changing default text sizing on mobile
+            - Resize Landing page logo at mobile layout
+            - Resize textbox for concert-redirect to be in line with TLP Crest.
+Mar 29:
+   - Sticky Header:
+                - Top Left and Top Right styling makes it so that the logo and the nav bar on top right are extremely small on mobile
+                - Pivot to Threebar system on top right and remove TLP static logo on top left @mobile
+    3 bar system in place, just need to pop up the nav bar menu options. Rest should be pretty easy (mostly text and div arrangement). 
+    - getting frustrated with 3 bar shit and popping up being in the wrong place maybe I'm tired.
+
+April 7th:
+    - Been avoiding things. I should do the finishing touches on the nav bar changes and then everything else will be easy.
+    - Later on, sub in the blurb text via Christine/Mimi
+    - The navbar for mobile only is affecting the structure of the desktop nav bar. Instead of making the navbar invisible on mobile,
+        I should make entirely seperate divs to be placed as sticky headers for excl. mobile and excl. desktop
+
+April 9th:
+    - Navbar figured out. Things to fix that I notice:
+        - bg color outline on video page on specific mobile sizings
+        - text-size overhaul for mobile
+        - elements on other pages
+        - figure out autopause when scrolling out of landing (page out of focus -> autoplay off)
+        - About Page
+        - Singers Page
+        - Projects Page
+            - All three need looking at for mobile sizing corrections
+
+    - Blurbs added in via Christine's message -> google doc 
+
+
+April 10th:
+    - Order of operations today:
+        - Update default text size for mobile
+        - Adjust about page image sizing to mock up
+        - Singers page embla
+
+About page done for now
+
+
+Singers page

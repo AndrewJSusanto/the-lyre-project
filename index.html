@@ -20,17 +20,18 @@
 
     <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
     <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
-    <script type="module" src="/src/js/index.js"></script>
     <title>The Lyre Project</title>
   </head>
   <body>
-    <header class="header" id="header">
+    <header class="header navbar-desktop-container" id="header">
         <div style="flex-direction: row;">
             <nav style="vertical-align: middle;">
-                <div>
-                    <img src="/assets/logos/TLP-Stamp.png" style="width: clamp(50px, 6vw, 100px);">
+                <!-- Desktop Only or no? Not sure class=navbar-desktop-container -->
+                <div class="navbar-desktop-container"> 
+                    <img loading="lazy" src="/assets/logos/TLP-Stamp.png" style="width: clamp(50px, 6vw, 100px);">
                 </div>
-                <div class='ibm-ps-heading' role="group" style="justify-content: flex; text-align: right;">
+
+                <div class='navbar-desktop-container ibm-ps-heading' role="group" style="justify-content: flex; text-align: right;">
                     <li><a href="#mission">ABOUT</a></li>
                     <li><a href="#singers">SINGERS</a></li>
                     <li><a href="#recent">PROJECTS</a></li>
@@ -39,16 +40,60 @@
         </div>
     </header>
 
+    <header class="header navbar-mobile-container div-mobile-only" id="header">
+        <div style="flex-direction: row;">
+            <nav style="position: relative; vertical-align: middle; display: flex;">
+                <!-- Desktop Only or no? Not sure class=navbar-desktop-container -->
+                <div style="float: left;"> 
+                    <!-- <img loading="lazy" src="/assets/logos/TLP-Stamp.png" style="width: clamp(50px, 6vw, 100px);"> -->
+                </div>
+
+                <!-- mobile -->
+                <div class="navbar-mobile-container div-mobile-only" id="navbar-mobile" style="width: fit-content;">
+                    <div class="navbar-1"></div>
+                    <div class="navbar-2"></div>
+                    <div class="navbar-3"></div>
+                </div>
+                <div class="navbar-mobile-container div-mobile-only" id="navbar-mobile-pop-up">
+                    <div class="navbar-mobile-container div-mobile-only" id="navbar-mobile-pop-up-contents">
+                        <li><a href="#landing">LANDING</a></li>
+                        <li><a href="#mission">ABOUT</a></li>
+                        <li><a href="#singers">SINGERS</a></li>
+                        <li><a href="#recent">PROJECTS</a></li>
+                    </div>
+                </div>
+
+
+                <div class="navbar-mobile-container div-mobile-only" id="overlay"></div>
+                <!-- <script>
+                    // somehow this is the only way I can get the DOM to update visually
+                    function navbar(x) {
+                        x.classList.toggle("change");
+                        let bar = document.getElementById("navbar-mobile-pop-up");
+                    }
+                </script> -->
+            </nav>
+        </div>
+    </header>
+
     <main class="container landing" id="landing" style="flex-direction: column;">
-        <video autoplay muted loop id="IWLME" style="width: 100vw; height: 100vh; object-fit: cover;">
-            <source src="/assets/video/IWLME-loop-0.95.mp4" type="video/mp4">
+        <video autoplay muted loop playsinline id="IWLME" preload="none" style="width: 100vw; height: 100vh; object-fit: cover;">
+            <source fetchpriority="high" src="/assets/video/IWLME-loop-0.95.mp4" type="video/mp4">
+            <source fetchpriority="high" src="/assets/video/IWLME-loop-0.95.mov" type="video/mp4">
           </video>
         <div class="transparent">
             <img src="/assets/logos/emblem-text.png" alt="Emblem Logo w/ text" style="width: 55%; height: 55%">
         </div>
+        <br>
+        <div class="border" style="padding: 25px; mix-blend-mode: exclusion;">
+            <h2 class="text-lily ibm-serif" style="display: inline; font-weight: 400;">In Concert: &nbsp &nbsp &nbsp</h2>
+            <a class="text-lily concertlink ibm-serif" id="concert-redirect" style="display: inline;" href="https://www.facebook.com/events/1349189202772206" target="_blank">
+                From Then Till Now - A Lenten Concert with TLP
+            </a>
+        </div>
     </main>
 
-    <main class="container mission" id="mission" style="background-color: var(--main-evergreen-half); flex-direction: column; justify-content: center;">
+    <main class="container mission" id="mission">
         <!-- <img src="/assets/emblem-s.png" alt="Emblem Small" style="display: block; width: clamp(300px, 30vw, 500px); padding: 3vw 10vh; margin-left: auto; margin-right: auto;"> -->
         <!-- <img src="/assets/emblem-s.png" alt="Emblem Small" style="position: fixed; top: 5vh; display: block; width: clamp(200px, 5vw, 500px); padding: 3vw 8vh; margin-left: auto; margin-right: auto;">
         <h2 class="figtree-sub" style="position: absolute; bottom: 20vh;">
@@ -56,19 +101,20 @@
         </h2> -->
 
         <!-- Set up container in two halves; left half with About Us, right half with group image truncated at bottom -->
-        <div class="img-wrapper" style="width: 70%; margin-bottom: 2rem;">
+        <div class="img-wrapper" id="about-emblem" style="width: 70%; margin-bottom: 2rem;">
             <img src="/assets/logos/emblem-s.png" alt="Emblem Small" style="width: clamp(100px, 8vw, 300px); float: left;">
         </div>
-        <div class="img-wrapper" style="position: fixed; bottom: 0%; right: 7%; max-width: 40%; max-height: 80%; height: auto;">
-            <img style="border-radius: 45% 45% 0px 0px;" src="/assets/TLP-Group-Outside-Cropped.JPG">
+        <div class="img-wrapper" id="about-group-picture-wrapper">
+            <img id="about-group-picture" src="/assets/TLP-Group-Outside-Cropped.JPG">
         </div>
         <div class="img-wrapper" style="opacity: 0.5; position: fixed; right: 5%; top: 5%; max-width: 18%; max-height: 18%;">
             <img src="/assets/logos/TLP-stamplogo-lily.png">
         </div>
-        <div class="wrapper" style="display: grid; grid-template-columns: 2fr 2fr; width: 70%; gap: 4rem;">
+
+        <div class="wrapper" id="about-wrapper">
             <div style="color: var(--neutral-lily);">
-                <h1 class="ibm-serif" style="font-style: italic; font-size: 3rem; text-align: left; margin: auto 0; color: inherit;"> About Us </h1>
-                <h2 class="figtree" style="font-weight: 100; font-size: 0.65rem; text-align: left; color: inherit;">
+                <h1 class="ibm-serif" id="about-us-heading"> About Us </h1>
+                <h2 class="figtree" id="about-us">
                     The Lyre Project is a choral ensemble dedicated
                     to connecting people to the beauty and depth of
                     sacred choral music. We strive for musical
@@ -86,34 +132,53 @@
                 </div> -->
             </div>
         </div>
+
+        <div class="wrapper div-mobile-only" id="about-wrapper-mobile">
+            <div style="color: var(--neutral-lily);">
+                <h1 class="ibm-serif" id="about-us-heading"> About Us </h1>
+                <h2 class="figtree" id="about-us">
+                    The Lyre Project is a choral ensemble dedicated
+                    to connecting people to the beauty and depth of
+                    sacred choral music. We strive for musical
+                    excellence in a way that is authentic to each of us,
+                    and are inspired to make the richness of choral
+                    music accessible and personal. We find immense
+                    joy and fulfillment in making beautiful music while
+                    journeying together as professionals, encouraging
+                    each other to grow in love and holiness.
+                </h2>
+            </div>
+            <div>
+            </div>
+        </div>
     </main>
     <main class="container singers" id="singers" style="flex-direction:column;">
         <div>
-            <h1 class="ibm-ps-heading" style="font-weight: 400; font-style: bold; letter-spacing: 0.2rem; color: var(--main-finest); margin-top: 15%;">OUR SINGERS</h1>
+            <h1 class="ibm-ps-heading" id="singers-heading">OUR SINGERS</h1>
         </div>
-        <div class="img-wrapper" style="opacity: 0.3; position: fixed; left: 0%; max-width: 35%; overflow: hidden;">
-            <img src="/assets/logos/TLP-stamplogo-evergreen.png">
+        <div class="img-wrapper" id="singers-stamp-wrapper">
+            <img id="singers-stamp" src="/assets/logos/TLP-stamplogo-evergreen.png">
         </div>
         <div class="embla">
             <div class="embla__viewport">
                 <div class="embla__container">
                     <div class="embla__slide" id="Chris">
-                        <img loading="lazy" class="" src="/assets/headshots/Chris.jpg">
+                        <img loading="eager" class="" src="/assets/headshots/Chris.jpg" style="filter: brightness(1.2);">
                         <div class="desc slide-text">
                             <div class="desc-name ibm-serif text-green">Chris Susanto</div>
                             <div class="desc-part ibm-serif text-green" style="font-style: italic;">Tenor</div>
-                            <div class="desc-desc figtree-sub text-green">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus nunc a hendrerit dictum. Etiam.
+                            <div class="desc-desc figtree-sub text-green" id="chris-blurb">
+                                As the Director of Music at St. Anthony of Padua Parish and the Artistic Director of The Lyre Project, Chris is constantly striving to bring people closer to the beauty of sacred music. Most of his days are spent thinking about music, whether it be conducting, arranging, singing, or directing the three choirs under his leadership. In his free time, he enjoys games, puzzles, daydreaming, and listening to music of all genres.
                             </div>
                         </div>
                     </div>
                     <div class="embla__slide" id="Anthony">
-                        <img loading="lazy" class="shadow" src="/assets/headshots/Anthony.jpg">
+                        <img loading="eager" class="shadow" src="/assets/headshots/Anthony.jpg" style="filter: brightness(1.25);">
                         <div class="desc slide-text">
                             <div class="desc-name ibm-serif text-green">Anthony Nootebos</div>
                             <div class="desc-part ibm-serif text-green" style="font-style: italic;">Bass</div>
                             <div class="desc-desc figtree-sub text-green">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus nunc a hendrerit dictum. Etiam.
+                                Anthony holds a BA in Music and is a triple threat of TLP; a composer, arranger, and a singer. As a member of our ensemble, he is our second bass (as well as emergency tenor) and the only one who doesn't wear glasses.
                             </div>
                         </div>
                     </div>
@@ -123,7 +188,7 @@
                             <div class="desc-name ibm-serif text-green">Chiara Susanto</div>
                             <div class="desc-part ibm-serif text-green" style="font-style: italic;">Soprano</div>
                             <div class="desc-desc figtree-sub text-green">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus nunc a hendrerit dictum. Etiam.
+                                Art is a constant for our second soprano Chiara, who is a co-artist of Amichi Studio, a freelance tattoo artist, and art educator. She holds a Bachelor of Fine Arts with a specialization in Visual Art, and just ran a full marathon in Japan!
                             </div>
                         </div>
                     </div>
@@ -143,7 +208,7 @@
                             <div class="desc-name ibm-serif text-green">Gabriel Uy</div>
                             <div class="desc-part ibm-serif text-green" style="font-style: italic;">Tenor</div>
                             <div class="desc-desc figtree-sub text-green">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus nunc a hendrerit dictum. Etiam.
+                                As TLP’s second tenor, Gabriel likes cooking, chess, and playing guitar. In his downtime from his day job in accounting, he enjoys directing St. Anthony’s 5PM choir and trying new recipes from all over the world to serve at rehearsals.
                             </div>
                         </div>
                     </div>
@@ -153,8 +218,7 @@
                             <div class="desc-name ibm-serif text-green">Jason Lau</div>
                             <div class="desc-part ibm-serif text-green" style="font-style: italic;">Baritone</div>
                             <div class="desc-desc figtree-sub text-green">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus nunc a hendrerit dictum. Etiam.
-                            </div>
+                                Jason has been singing since he was five years old, and his range has only expanded since then— now he is a bass of TLP! He is trilingual, loves chocolate, and plays games like League, Genshin Impact, and Honkai Star Rail.                            </div>
                         </div>
                     </div>
                     <div class="embla__slide" id="Megan">
@@ -163,27 +227,26 @@
                             <div class="desc-name ibm-serif text-green">Megan Delfin</div>
                             <div class="desc-part ibm-serif text-green" style="font-style: italic;">Alto</div>
                             <div class="desc-desc figtree-sub text-green">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus nunc a hendrerit dictum. Etiam.
-                            </div>
+                                Megan is our lowest alto and the mastermind behind many of our Instagram reels, being a key part of our social media team. Elementary school teacher by day, and Master’s in Classical Ed student by night, she also enjoys exploring food and history around the world.                            </div>
                         </div>
                     </div>
                     <div class="embla__slide" id="Michelle">
-                        <img loading="lazy" class="shadow" src="/assets/headshots/Michelle.jpg">
+                        <img loading="eager" class="shadow" src="/assets/headshots/Michelle.jpg">
                         <div class="desc slide-text">
                             <div class="desc-name ibm-serif text-green">Michelle Uy</div>
                             <div class="desc-part ibm-serif text-green" style="font-style: italic;">Alto</div>
                             <div class="desc-desc figtree-sub text-green">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus nunc a hendrerit dictum. Etiam.
+                                Aside from being our first alto, Michelle is our resident graphic designer and the brain behind the brand. When she’s not crafting new designs for her small business Amichi Studio, Michelle can be found hyperfixating on Broadway musicals and enjoying a <a class="text-green" href="https://www.youtube.com/watch?v=ZvkGDqlRCvY" target="_blank" style="font-size: inherit;">mancha latay</a> (known to most as a matcha latte).
                             </div>
                         </div>
                     </div>
                     <div class="embla__slide" id="Francis">
-                        <img loading="lazy" class="shadow" src="/assets/headshots/Francis.jpg">
+                        <img loading="eager" class="shadow" src="/assets/headshots/Francis.jpg">
                         <div class="desc slide-text">
                             <div class="desc-name ibm-serif text-green">Francis Tan</div>
                             <div class="desc-part ibm-serif text-green" style="font-style: italic;">Bass/Baritone</div>
                             <div class="desc-desc figtree-sub text-green">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus nunc a hendrerit dictum. Etiam.
+                                Not only is Francis a bass, but he has arranged music for TLP and edits the audio for our social media. He’s well known for his Elmo impression, aspires to be a counsellor, and recently spent a year teaching in Japan.
                             </div>
                         </div>
                     </div>
@@ -215,16 +278,21 @@
         </div>
     </main>
     <main class="container projects" style="display: flex; flex-direction: column;" id="recent">
+        <!-- TEMP BACKGROUND WRAP -->
+        <div class="img-wrapper" style="z-index: -1; opacity: 0.3; position: fixed; right: 0%; bottom: 0%; max-width: 30%; overflow: hidden;">
+            <img src="/assets/logos/TLP-stamplogo-lily.png">
+        </div>
         <div class="title-container">
-            <h2 class="ibm-ps-heading" style="font-size: 1.5vw">- Recent Projects -<br>
-                <a style="text-decoration: none" href="https://www.youtube.com/@TheLyreProject">
-                    <svg    id="YouTube SVG @ tablericons"
+            <h2 class="ibm-serif" id="projects-heading">Featured Projects<br>
+                <a style="text-decoration: none" href="https://www.youtube.com/@TheLyreProject" target="_blank">
+                    <svg    class="youtube-icon"
+                            id="YouTube SVG @ tablericons"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
                             height="24"
                             viewBox="0 0 24 24"
                             fill="none"
-                            stroke="currentColor"
+                            stroke="white"
                             stroke-width="1.5"
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -249,7 +317,7 @@
             <a>
             </a>
             <div role="group" style="font-size: 0.8rem; float: right; display: flex; gap: 10px;">
-                <a style="text-decoration: none" href="https://www.instagram.com/thelyreproject/">
+                <a style="text-decoration: none" href="https://www.instagram.com/thelyreproject/" target="_blank">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             fill-rule="evenodd"
@@ -269,7 +337,7 @@
                         />
                     </svg>
                 </a>
-                <a style="text-decoration: none;" href="https://www.facebook.com/profile.php?id=100086745782301">
+                <a style="text-decoration: none;" href="https://www.facebook.com/profile.php?id=100086745782301" target="_blank">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M9.19795 21.5H13.198V13.4901H16.8021L17.198 9.50977H13.198V7.5C13.198 6.94772 13.6457 6.5 14.198 6.5H17.198V2.5H14.198C11.4365 2.5 9.19795 4.73858 9.19795 7.5V9.50977H7.19795L6.80206 13.4901H9.19795V21.5Z"
@@ -277,7 +345,7 @@
                         />
                     </svg>
                 </a>
-                <a href="https://linktr.ee/thelyreproject?fbclid=PAZXh0bgNhZW0CMTEAAaaIezdDtTB5pKZ7ARV68Spt6-PygEIkRRZKwP_SSu_ms-gK-aMdCohpm0Y_aem__IBGKTSRK8LcU4B2-3RAOg">
+                <a href="https://linktr.ee/thelyreproject?fbclid=PAZXh0bgNhZW0CMTEAAaaIezdDtTB5pKZ7ARV68Spt6-PygEIkRRZKwP_SSu_ms-gK-aMdCohpm0Y_aem__IBGKTSRK8LcU4B2-3RAOg" target="_blank">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             fill-rule="evenodd"
@@ -291,6 +359,8 @@
         </div>
     </footer>
 
+
+    <script type="module" src="/src/js/index.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </body>

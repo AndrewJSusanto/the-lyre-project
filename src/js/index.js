@@ -47,6 +47,11 @@ emblaApi.on('destroy', removePrevNextBtnsClickHandlers)
 // Autoplay onClick event to pause/play background video (click anywhere on landing)
 var bgv = document.getElementById("IWLME");
 var landing = document.getElementById("landing");
+
+bgv.pause();
+bgv.style.filter = "blur(5px) brightness(0.4)";
+bgv.style.transition = "all 1s ease-in-out";
+
 landing.addEventListener("click", function(e) {
     if (bgv.paused) {
       bgv.play();

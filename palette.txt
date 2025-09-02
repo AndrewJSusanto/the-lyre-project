@@ -1,8 +1,0 @@
-light sage #9FB5A9
-dark sage #55776C
-dark brown #4B3930
-
-
-
-article for carousel
-style="max-width: clamp(200px, 50vw, 800px); max-height: clamp(700px, 60vh, 1400px);"

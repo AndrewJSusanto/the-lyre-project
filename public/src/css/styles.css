@@ -564,6 +564,34 @@ ion-icon {
     letter-spacing: 0.17rem;
 }
 
+#calendar-wrapper {
+    visibility: visible;
+    display: grid;
+    grid-template-columns: 2fr 0fr;
+    width: 70%;
+    gap: 2rem;
+}
+
+#calendar-wrapper-mobile {
+    visibility: none;
+    display: none;
+}
+
+#calendar-heading {
+    font-style: italic;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: auto 0;
+    color: inherit;
+}
+
+#calendar {
+    font-weight: 200;
+    font-size: 0.65rem;
+    text-align: center;
+    color: inherit;
+}
+
 
 
 @media (max-width: 450px) {

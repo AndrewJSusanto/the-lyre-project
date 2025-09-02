@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+
+    <!-- <link rel="icon" type="image/x-icon" href="/assets/favicon.ico?v=1"> -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico?v=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css">
+    <!-- <link rel="stylesheet" href="/src/css/styles.css"> -->
+    <link rel="stylesheet" href="/src/css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    <!-- Serif -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <title>TLP Event Calendar</title>
+  </head>
+  <body>
+    <header class="header navbar-desktop-container" id="header">
+        <div style="flex-direction: row;">
+            <nav style="vertical-align: middle;">
+                <!-- Desktop Only or no? Not sure class=navbar-desktop-container -->
+                <div class="navbar-desktop-container"> 
+                    <img loading="lazy" src="/assets/logos/TLP-Stamp.png" style="width: clamp(50px, 6vw, 100px);">
+                </div>
+
+                <div class='navbar-desktop-container figtree-semibold' role="group" style="justify-content: flex; text-align: right;">
+                    <li><a href="#mission">ABOUT</a></li>
+                    <li><a href="#singers">SINGERS</a></li>
+                    <li><a href="#recent">PROJECTS</a></li>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <header class="header navbar-mobile-container div-mobile-only" id="header">
+        <div style="flex-direction: row;">
+            <nav style="position: relative; vertical-align: middle; display: flex;">
+                <!-- Desktop Only or no? Not sure class=navbar-desktop-container -->
+                <div style="float: left;"> 
+                    <!-- <img loading="lazy" src="/assets/logos/TLP-Stamp.png" style="width: clamp(50px, 6vw, 100px);"> -->
+                </div>
+
+                <!-- mobile -->
+                <div class="navbar-mobile-container div-mobile-only" id="navbar-mobile" style="width: fit-content;">
+                    <div class="navbar-1"></div>
+                    <div class="navbar-2"></div>
+                    <div class="navbar-3"></div>
+                </div>
+                <div class="navbar-mobile-container div-mobile-only" id="navbar-mobile-pop-up">
+                    <div class="navbar-mobile-container div-mobile-only figtree-semibold" id="navbar-mobile-pop-up-contents">
+                        <li><a href="#landing">LANDING</a></li>
+                        <li><a href="#mission">ABOUT</a></li>
+                        <li><a href="#singers">SINGERS</a></li>
+                        <li><a href="#recent">PROJECTS</a></li>
+                    </div>
+                </div>
+
+
+                <div class="navbar-mobile-container div-mobile-only" id="overlay"></div>
+                <!-- <script>
+                    // somehow this is the only way I can get the DOM to update visually
+                    function navbar(x) {
+                        x.classList.toggle("change");
+                        let bar = document.getElementById("navbar-mobile-pop-up");
+                    }
+                </script> -->
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mission" id="mission">
+        <!-- <img src="/assets/emblem-s.png" alt="Emblem Small" style="display: block; width: clamp(300px, 30vw, 500px); padding: 3vw 10vh; margin-left: auto; margin-right: auto;"> -->
+        <!-- <img src="/assets/emblem-s.png" alt="Emblem Small" style="position: fixed; top: 5vh; display: block; width: clamp(200px, 5vw, 500px); padding: 3vw 8vh; margin-left: auto; margin-right: auto;">
+        <h2 class="figtree-sub" style="position: absolute; bottom: 20vh;">
+            A young adult choral ensemble singing sacred music from Vancouver, BC, established in the heart of Marpole.
+        </h2> -->
+
+        <!-- Set up container in two halves; left half with About Us, right half with group image truncated at bottom -->
+        <!-- <div class="img-wrapper" id="about-emblem" style="width: 70%; margin-bottom: 2rem;">
+            <img src="/assets/logos/emblem-s.png" alt="Emblem Small" style="width: clamp(100px, 8vw, 300px); float: left;">
+        </div> -->
+        <!-- <div class="img-wrapper" id="about-group-picture-wrapper">
+            <img id="about-group-picture" src="/assets/TLP-Group-Outside-Cropped.JPG">
+        </div> -->
+        <div class="img-wrapper" style="opacity: 0.5; position: fixed; left: 5%; bottom: 25%; max-width: 12%; max-height: 12%;">
+            <img src="/assets/logos/TLP-stamplogo-lily.png">
+        </div>
+
+        <div class="wrapper" id="calendar-wrapper">
+            <div style="color: var(--neutral-lily);">
+                <h1 class="ibm-serif" id="calendar-heading"> Calendar </h1>
+                <h2 class="ibm-serif" id="calendar">
+                    When?
+                </h2>
+                <p class="ibm-serif" id="calendar-embed">
+                    Eventual embedded google calendar, initial will be embedded, future plans for populating through api call to calendar to allow for more versatile styling 
+                </p>
+            </div>
+            <div>
+                <!-- <div class="img-wrapper">
+                    <img style="border-radius: 45% 45% 0px 0px;" src="/assets/TLP-Group-Outside-Cropped.JPG">
+                </div> -->
+            </div>
+        </div>
+
+        <div class="wrapper div-mobile-only" id="calendar-wrapper-mobile">
+            <div style="color: var(--neutral-lily);">
+                <h1 class="ibm-serif" id="calendar-heading"> About Us </h1>
+                <h2 class="figtree" id="calendar">
+                    The Lyre Project is a choral ensemble dedicated
+                    to connecting people to the beauty and depth of
+                    sacred choral music. We strive for musical
+                    excellence in a way that is authentic to each of us,
+                    and are inspired to make the richness of choral
+                    music accessible and personal. We find immense
+                    joy and fulfillment in making beautiful music while
+                    journeying together as professionals, encouraging
+                    each other to grow in love and holiness.
+                </h2>
+            </div>
+            <div>
+            </div>
+        </div>
+    </main>
+  </body>

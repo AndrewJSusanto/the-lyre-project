@@ -244,5 +244,8 @@ April 10th:
 
 About page done for now
 
+mobile in-concert-heading text larger, box larger
 
-Singers page
+
+Future:
+change header function depending on touch devices 

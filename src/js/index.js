@@ -83,3 +83,17 @@ navbar.addEventListener("click", function(e) {
   overlay.classList.toggle("change");
   console.log(popout);
 })
+
+// Tap-on/tap-off concert card mobile interaction
+
+document.addEventListener("DOMContentLoaded", () => {
+  const concertCard = document.querySelectorAll(".concert-hover");
+
+  if(window.matchMedia("(hover: none)").matches) { // hover: none describes touch devices that cannot use hover controls. 
+    concertCard.forEach(card => { // for each member within the concert card, toggle desktop elements off and mobile/touch elements on.
+      card.addEventListener("click", () => {
+        card.classList.toggle("active");
+      })
+    })
+  }
+})

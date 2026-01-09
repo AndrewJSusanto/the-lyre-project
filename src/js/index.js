@@ -65,10 +65,13 @@ landing.addEventListener("click", function(e) {
 })
 
 // Prevents autoplay onclick event from triggering when clicking the link redirect
-var concertRedirect = document.getElementById("concert-redirect");
-concertRedirect.addEventListener("click", function(e) {
-  e.stopPropagation();
-})
+// Was causing an issue with mobile navbar interaction when concert-redirect was missing.
+// Remove when no concert redirect, readd later when needed.
+
+// var concertRedirect = document.getElementById("concert-redirect");
+// concertRedirect.addEventListener("click", function(e) {
+//   e.stopPropagation();
+// })
 
 
 

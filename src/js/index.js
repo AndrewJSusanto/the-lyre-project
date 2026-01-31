@@ -112,10 +112,10 @@ function populateGallery() {
     console.log('wat');
   }
   
-  const galleryURLs = Array.from({length: 17}, (_, i) => 
+  const galleryURLs = Array.from({length: 18}, (_, i) => 
     `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/tlp/gallery/${String(i+1).padStart(2,'0')}.jpg`
   );
-  const thumbURLs = Array.from({length: 17}, (_, i) =>
+  const thumbURLs = Array.from({length: 18}, (_, i) =>
     `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${THUMB}/tlp/gallery/${String(i+1).padStart(2,'0')}.jpg`
   );
 

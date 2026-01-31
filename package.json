@@ -1,7 +1,9 @@
 {
   "type": "module",
   "dependencies": {
+    "cloudinary": "^2.9.0",
     "embla-carousel": "^8.5.1",
-    "embla-carousel-autoplay": "^8.5.1"
+    "embla-carousel-autoplay": "^8.5.1",
+    "fslightbox": "^3.7.4"
   }
 }

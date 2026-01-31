@@ -1,2 +1,4 @@
 *.txt
 plans.txt
+cli/
+cdn-upload.sh

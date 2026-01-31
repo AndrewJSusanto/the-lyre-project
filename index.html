@@ -16,7 +16,8 @@
 
     <!-- Serif -->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
+    <!-- fslightbox -->
+    <link href="https://cdn.jsdelivr.net/npm/fslightbox/index.css" rel="stylesheet">
 
     <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
     <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
@@ -32,9 +33,10 @@
                 </div>
 
                 <div class='navbar-desktop-container figtree-semibold' role="group" style="justify-content: flex; text-align: right;">
-                    <li><a href="#mission">ABOUT</a></li>
-                    <li><a href="#singers">SINGERS</a></li>
-                    <li><a href="#recent">PROJECTS</a></li>
+                    <li><a class="ui-icon" href="#mission">ABOUT</a></li>
+                    <li><a class="ui-icon" href="#singers">SINGERS</a></li>
+                    <li><a class="ui-icon" href="#recent">PROJECTS</a></li>
+                    <li><a class="ui-icon" href="#media">GALLERY</a></li>
                 </div>
             </nav>
         </div>
@@ -56,10 +58,11 @@
                 </div>
                 <div class="navbar-mobile-container div-mobile-only" id="navbar-mobile-pop-up">
                     <div class="navbar-mobile-container div-mobile-only figtree-semibold" id="navbar-mobile-pop-up-contents">
-                        <li><a href="#landing">LANDING</a></li>
-                        <li><a href="#mission">ABOUT</a></li>
-                        <li><a href="#singers">SINGERS</a></li>
-                        <li><a href="#recent">PROJECTS</a></li>
+                        <li><a class="ui-icon" href="#landing">LANDING</a></li>
+                        <li><a class="ui-icon" href="#mission">ABOUT</a></li>
+                        <li><a class="ui-icon" href="#singers">SINGERS</a></li>
+                        <li><a class="ui-icon" href="#recent">PROJECTS</a></li>
+                        <li><a class="ui-icon" href="#media">GALLERY</a></li>
                     </div>
                 </div>
 
@@ -256,7 +259,7 @@
                         </div>
                     </div>
                     <div class="embla__slide" id="Jason">
-                        <img loading="lazy" class="shadow" src="/assets/headshots/Jason.jpeg">
+                        <img loading="lazy" class="shadow" src="/assets/headshots/Jason.jpg">
                         <div class="desc slide-text">
                             <div class="desc-name ibm-serif text-green">Jason Lau</div>
                             <div class="desc-part ibm-serif text-green" style="font-style: italic;">Baritone</div>
@@ -279,7 +282,7 @@
                             <div class="desc-name ibm-serif text-green">Michelle Uy</div>
                             <div class="desc-part ibm-serif text-green" style="font-style: italic;">Alto</div>
                             <div class="desc-desc figtree-sub text-green">
-                                Aside from being our first alto, Michelle is our resident graphic designer and the brain behind the brand. When she’s not crafting new designs for her small business Amichi Studio, Michelle can be found hyperfixating on Broadway musicals and enjoying a <a class="text-green" href="https://www.youtube.com/watch?v=ZvkGDqlRCvY" target="_blank" style="text-decoration: underline; font-size: inherit;">mancha latay</a> (known to most as a matcha latte).
+                                Aside from being our first alto, Michelle is our resident graphic designer and the brain behind the brand. When she’s not crafting new designs for her small business Amichi Studio, Michelle can be found hyperfixating on Broadway musicals and enjoying a <a class="ui-icon text-green" href="https://www.youtube.com/watch?v=ZvkGDqlRCvY" target="_blank" style="text-decoration: underline; font-size: inherit; color: inherit;">mancha latay</a> (known to most as a matcha latte).
                             </div>
                         </div>
                     </div>
@@ -320,33 +323,27 @@
             </div>
         </div>
     </main>
-    <main class="container projects" style="display: flex; flex-direction: column;" id="recent">
+    <main class="container projects" style="display: flex; flex-direction: column; align-items: center;" id="recent">
         <!-- TEMP BACKGROUND WRAP -->
         <div class="img-wrapper" style="z-index: -1; opacity: 0.3; position: fixed; right: 0%; bottom: 0%; max-width: 30%; overflow: hidden;">
             <img src="/assets/logos/TLP-stamplogo-lily.png">
         </div>
-        <div class="title-container">
-            <h2 class="ibm-serif" id="projects-heading">Featured Projects<br>
-                <a style="text-decoration: none" href="https://www.youtube.com/@TheLyreProject" target="_blank">
-                    <svg    class="youtube-icon"
-                            id="YouTube SVG @ tablericons"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="white"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                    >
-                        <path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z" />
-                        <path d="M10 9l5 3l-5 3z" />
-                    </svg>
-                </a>
-            </h2>
+        <div class="title-container" id="projects-title">
+            <h2 class="ibm-serif" id="projects-heading">Featured Projects</h2>
         </div>
-        <div class="media-container">
+
+        <div class="grid-container" id="grid-desktop">
+            <div class="media-container">
+                <div class="border video-container">
+                    <iframe loading="lazy" src="https://www.youtube.com/embed/Swnf2qILrrw" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="border video-container">
+                    <iframe loading="lazy" src="https://www.youtube.com/embed/E385afXOIXg" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="div-mobile-only media-container">
             <div class="border video-container">
                 <iframe loading="lazy" src="https://www.youtube.com/embed/Swnf2qILrrw" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -354,13 +351,23 @@
                 <iframe loading="lazy" src="https://www.youtube.com/embed/E385afXOIXg" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
+
     </main>
+    <main class="container media" id="media">
+        <div class="gallery-crest" id="gallery-heading">
+            <img src="./assets/logos/TLP-horizontal-wh.png" id="tlp-horizontal">
+        </div>
+        <div class="gallery-container">
+            <div class="horiz-gallery" id="cloud-gallery"></div>
+        </div>
+    </main>
+
     <footer class="footer transparent" id="footer">
         <div role="group" style="text-align: left; font-size: 16px;">
             <a>
             </a>
             <div role="group" style="font-size: 0.8rem; float: right; display: flex; gap: 10px;">
-                <a style="text-decoration: none" href="https://www.instagram.com/thelyreproject/" target="_blank">
+                <a class="ui-icon" style="text-decoration: none" href="https://www.instagram.com/thelyreproject/" target="_blank">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             fill-rule="evenodd"
@@ -380,7 +387,7 @@
                         />
                     </svg>
                 </a>
-                <a style="text-decoration: none;" href="https://www.facebook.com/profile.php?id=100086745782301" target="_blank">
+                <a class="ui-icon" style="text-decoration: none;" href="https://www.facebook.com/profile.php?id=100086745782301" target="_blank">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M9.19795 21.5H13.198V13.4901H16.8021L17.198 9.50977H13.198V7.5C13.198 6.94772 13.6457 6.5 14.198 6.5H17.198V2.5H14.198C11.4365 2.5 9.19795 4.73858 9.19795 7.5V9.50977H7.19795L6.80206 13.4901H9.19795V21.5Z"
@@ -388,7 +395,7 @@
                         />
                     </svg>
                 </a>
-                <a href="https://linktr.ee/thelyreproject?fbclid=PAZXh0bgNhZW0CMTEAAaaIezdDtTB5pKZ7ARV68Spt6-PygEIkRRZKwP_SSu_ms-gK-aMdCohpm0Y_aem__IBGKTSRK8LcU4B2-3RAOg" target="_blank">
+                <a class="ui-icon" style="text-decoration: none;" href="https://linktr.ee/thelyreproject?fbclid=PAZXh0bgNhZW0CMTEAAaaIezdDtTB5pKZ7ARV68Spt6-PygEIkRRZKwP_SSu_ms-gK-aMdCohpm0Y_aem__IBGKTSRK8LcU4B2-3RAOg" target="_blank">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             fill-rule="evenodd"
@@ -396,6 +403,11 @@
                             d="M11 17.9C8.71776 17.4367 7 15.419 7 13V7C7 4.23858 9.23858 2 12 2C14.7614 2 17 4.23858 17 7V13C17 15.419 15.2822 17.4367 13 17.9V21C13 21.5523 12.5523 22 12 22C11.4477 22 11 21.5523 11 21V17.9ZM12 4C13.6569 4 15 5.34315 15 7V13C15 14.3062 14.1652 15.4175 13 15.8293V11C13 10.4477 12.5523 10 12 10C11.4477 10 11 10.4477 11 11V15.8293C9.83481 15.4175 9 14.3062 9 13V7C9 5.34315 10.3431 4 12 4Z"
                             fill="currentColor"
                         />
+                    </svg>
+                </a>
+                <a class="ui-icon" style="text-decoration: none;" href="https://www.youtube.com/@TheLyreProject" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                        <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
                     </svg>
                 </a>
             </div>
@@ -406,5 +418,6 @@
     <script type="module" src="/src/js/index.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fslightbox/index.js"></script>
   </body>
 </html>

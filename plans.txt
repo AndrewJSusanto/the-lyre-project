@@ -249,3 +249,18 @@ mobile in-concert-heading text larger, box larger
 
 Future:
 change header function depending on touch devices 
+
+
+jan 29
+so i need to just get a batch of photos, get them all jpg, upload them with my batch script, then populate with some js script clientside so the gallery can fill up
+also fslightbox is configured so lets hope fslightbox and cloudinary can work together.
+
+got batch of photos, now getting them all jpg
+then will upload all with batch script
+got them all into folder, now run bashscript to upload to cloudinary
+got them uploaded to cloudinary with predictable urls following the format of https://res.cloudinary.com/dzvswz1rz/image/upload/v1769809986/tlp/gallery/xx.jpg
+Now write/enable script to populate gallery using this format
+Populated the website with the images (thumbnails are still broken because of weird stuff)
+nvm I got the thumbnails generated now im insane
+Now I need to configure fslightbox such that if an image is clicked it pulls open the actual image
+fix mobile styling = DDDDDDD

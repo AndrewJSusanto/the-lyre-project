@@ -1,6 +1,7 @@
 // import { addDotBtnsAndClickHandlers } from './buttons.js';
 import { addPrevNextBtnsClickHandlers } from './buttons.js';
 
+
 const emblaNode = document.querySelector('.embla');
 const options = { loop: true };
 const autoplayOptions = { delay: 10000, stoponInteraction: true};
@@ -89,14 +90,61 @@ navbar.addEventListener("click", function(e) {
 
 // Tap-on/tap-off concert card mobile interaction
 
-document.addEventListener("DOMContentLoaded", () => {
-  const concertCard = document.querySelectorAll(".concert-hover");
+// document.addEventListener("DOMContentLoaded", () => {
+//   const concertCard = document.querySelectorAll(".concert-hover");
 
-  if(window.matchMedia("(hover: none)").matches) { // hover: none describes touch devices that cannot use hover controls. 
-    concertCard.forEach(card => { // for each member within the concert card, toggle desktop elements off and mobile/touch elements on.
-      card.addEventListener("click", () => {
-        card.classList.toggle("active");
-      })
-    })
+//   if(window.matchMedia("(hover: none)").matches) { // hover: none describes touch devices that cannot use hover controls. 
+//     concertCard.forEach(card => { // for each member within the concert card, toggle desktop elements off and mobile/touch elements on.
+//       card.addEventListener("click", () => {
+//         card.classList.toggle("active");
+//       })
+//     })
+//   }
+// })
+const gallery = document.getElementById("cloud-gallery");
+
+function populateGallery() {
+  const CLOUD_NAME = "dzvswz1rz";
+  const ASSET_FOLDER = "tlp";
+  const THUMB = "c_fill,w_320,h_320,f_auto,q_auto";
+
+  if (gallery.children.length > 0) {
+    console.log('wat');
   }
-})
+  
+  const galleryURLs = Array.from({length: 17}, (_, i) => 
+    `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/tlp/gallery/${String(i+1).padStart(2,'0')}.jpg`
+  );
+  const thumbURLs = Array.from({length: 17}, (_, i) =>
+    `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${THUMB}/tlp/gallery/${String(i+1).padStart(2,'0')}.jpg`
+  );
+
+  galleryURLs.forEach((url, idx) => {
+    const lblink = document.createElement("a");
+    lblink.setAttribute("href", url);
+    lblink.setAttribute("data-fslightbox", "gallery");
+    
+    const img = new Image();
+    img.src = thumbURLs[idx];
+    img.alt = `Gallery image ${idx+1}`;
+    img.className = "gallery-img";
+    img.loading = "lazy";
+
+    lblink.appendChild(img);
+    gallery.appendChild(lblink);
+    refreshFsLightbox();
+
+    img.onerror = () => {
+      console.warn(`Image not found: ${url}`);
+      resolve(false);
+    }
+
+  })
+}
+
+window.addEventListener("DOMContentLoaded", populateGallery);
+window.addEventListener("pageshow", (e) => {
+  if(e.persisted) {
+    populateGallery();
+  }
+});

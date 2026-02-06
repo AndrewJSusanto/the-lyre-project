@@ -414,39 +414,25 @@ img {
 .horiz-gallery {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 10rem;
-    grid-template-rows: repeat(2, 10rem);
+    grid-auto-columns: 22vh;
+    grid-template-rows: max-content max-content;
     gap: 0.5rem;
     overflow-x: auto;
     overflow-y: hidden;
 
     scroll-snap-type: x mandatory;
     touch-action: pan-y pinch-zoom;
-    padding: 0 1rem; /* TB 0 LR 1rem */
-
+    padding: 0 1rem;
 }
 
-/* .horiz-gallery::-webkit-scrollbar {
-    -webkit-appearance: none;
-}
-
-.horiz-gallery::-webkit-scrollbar:vertical {
-    width: 0.3rem;
-}
-
-.horiz-gallery::-webkit-scrollbar:horizontal {
-    height: 0.3rem;
-}
-
-.horiz-gallery::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    border: 2px var(--accent-maris); 
-    background-color: rgba(255, 255, 255, 0.25);
-    z-index:5;
+/* .gallery-img-container {
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    scroll-snap-align: start;
 } */
 
 .horiz-gallery img {
-    flex: 0 0 auto;
     height: 100%;
     width: 100%;
     border-radius: 8px;
@@ -861,7 +847,10 @@ ion-icon {
 
 .gallery-container {
     z-index: 10;
-    max-width: 95%;
+    width: 95vw;
+    min-height: 50vh;
+    max-width: 95vw;
+    max-height: 75vh;
     overflow: hidden;
     padding: 1rem 0;
 }
@@ -978,6 +967,9 @@ ion-icon {
     #navbar-mobile-pop-up-contents li {
         display: block;
         text-align: right;
+    }
+    #navbar-mobile-pop-up-contents li .ui-icon {
+        font-size: 2rem;
     }
     
 
@@ -1212,17 +1204,18 @@ ion-icon {
     .horiz-gallery {
         display: grid;
         grid-auto-flow: column;
-        grid-auto-columns: 20rem;
-        grid-template-rows: repeat(3, 20rem);
+        /* grid-auto-columns: 20rem;
+        grid-template-rows: repeat(3, 20rem); */
+        grid-auto-columns: 20vh;
+        grid-template-rows: max-content max-content max-content;
         gap: 0.5rem;
         overflow-x: auto;
         overflow-y: hidden;
-        height: auto;
-        width: auto;
         scroll-snap-type: x mandatory;
         touch-action: pan-x pan-y pinch-zoom;
         padding: 0 1rem; /* TB 0 LR 1rem */
     }
+
     
     #tlp-horizontal {
         width: 100%;

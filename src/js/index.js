@@ -121,6 +121,7 @@ function populateGallery() {
 
   galleryURLs.forEach((url, idx) => {
     const lblink = document.createElement("a");
+    lblink.className = "gallery-img-container";
     lblink.setAttribute("href", url);
     lblink.setAttribute("data-fslightbox", "gallery");
     

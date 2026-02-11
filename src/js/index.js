@@ -112,21 +112,23 @@ function populateGallery() {
     console.log('wat');
   }
   
-  const galleryURLs = Array.from({length: 18}, (_, i) => 
+  const galleryURLs = Array.from({length: 44}, (_, i) => 
     `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/tlp/gallery/${String(i+1).padStart(2,'0')}.jpg`
   );
-  const thumbURLs = Array.from({length: 18}, (_, i) =>
+  const thumbURLs = Array.from({length: 44}, (_, i) =>
     `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${THUMB}/tlp/gallery/${String(i+1).padStart(2,'0')}.jpg`
   );
 
-  galleryURLs.forEach((url, idx) => {
+  const thumbs = thumbURLs.slice().reverse();
+
+  galleryURLs.slice().reverse().forEach((url, idx) => {
     const lblink = document.createElement("a");
     lblink.className = "gallery-img-container";
     lblink.setAttribute("href", url);
     lblink.setAttribute("data-fslightbox", "gallery");
     
     const img = new Image();
-    img.src = thumbURLs[idx];
+    img.src = thumbs[idx];
     img.alt = `Gallery image ${idx+1}`;
     img.className = "gallery-img";
     img.loading = "lazy";
